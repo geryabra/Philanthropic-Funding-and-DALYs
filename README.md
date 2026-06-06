@@ -21,4 +21,5 @@ This repository contains the code, datasets, intermediate outputs, and documenta
 | 2022_Revenue.xlsx | Source nonprofit revenue dataset |
 | FINAL_DATASET_STAGE1.xlsx | Direct DALY mappings (Stage 1) |
 | B_proxy_review_workflow_v1.xlsx | Review workflow for Group B candidate mappings |
-| C_entity_extraction_mapping_v1.xlsx | Entity extraction analysis for Group C |
+| C_entity_extraction_mapping_v1.py | Entity extraction and DALY candidate mapping pipeline for unresolved Group C organizations |
+| C_entity_extraction_mapping_v1.xlsx | Entity extraction analysis and candidate DALY mappings for Group C |
