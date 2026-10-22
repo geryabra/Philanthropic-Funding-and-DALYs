@@ -1,87 +1,77 @@
-# DALY-Philanthropy-Mapping
+# Philanthropic Funding and Global Disease Burden (DALYs)
 
-This research project explores the relationship between philanthropic funding and global disease burden (DALYs).
+## Research Overview
 
-The study maps nonprofit medical organizations to DALY disease categories using a combination of:
+This repository documents an academic research project examining the relationship between philanthropic funding for healthcare and the global burden of disease, measured using Disability-Adjusted Life Years (DALYs).
 
-- Direct disease matching
-- Alias-based mapping
-- NLP analysis
-- Entity extraction
-- Semantic similarity
-- Manual review and taxonomy refinement
+The research investigates how nonprofit healthcare organizations can be linked to disease categories and medical areas, with the broader objective of comparing the distribution of philanthropic funding with disease burden.
 
----
+A central methodological challenge is that nonprofit organizations do not always focus on a single disease. Their activities may address broader medical fields, healthcare services, research, or patient support.
 
-## Research Workflow
+The project therefore combines disease mapping, medical terminology dictionaries, and organization activity classification.
 
-1. Direct Disease Mapping
-2. Alias-Based Matching
-3. Classification into Groups A, B and C
-4. NLP and Clustering Analysis
-5. Entity Extraction
-6. Semantic Similarity
-7. Manual Review and Taxonomy Refinement
+## Research Objectives
 
----
+1. Identify relationships between nonprofit healthcare organizations and DALY disease categories.
+2. Develop methods for identifying disease-related information in organizational names and mission statements.
+3. Investigate organizations that cannot be directly assigned to a specific disease.
+4. Evaluate the use of medical terminology and rule-based classification to improve the interpretation of organizational activities.
+5. Establish a transparent and reproducible foundation for analyzing philanthropic funding in relation to global disease burden.
 
 ## Repository Structure
 
-| File | Purpose |
-|--------|---------|
-| Org_mission_to_DALY_v8.py | Main research pipeline responsible for disease mapping, alias matching, and classification into Groups A, B and C |
-| DALYS_2022.xlsx | WHO DALY reference dataset used as the disease burden taxonomy |
-| 2022_Revenue.xlsx | Source nonprofit revenue dataset used throughout the study |
-| FINAL_DATASET_STAGE1.xlsx | Stage 1 output containing organizations directly mapped to DALY diseases and categories |
-| B_entity_extraction_mapping_v1.py | Entity extraction and DALY candidate mapping pipeline for unresolved Group B organizations |
-| B_entity_extraction_mapping_v1.xlsx | Entity extraction analysis and candidate DALY mappings for Group B organizations |
-| B_proxy_review_workflow_v1.xlsx | Manual review workflow used to validate candidate DALY assignments in Group B |
-| C_entity_extraction_mapping_v1.py | Entity extraction and DALY candidate mapping pipeline for unresolved Group C organizations |
-| C_entity_extraction_mapping_v1.xlsx | Entity extraction analysis and candidate DALY mappings for Group C organizations |
+### 01 — Initial DALY Mapping
 
----
+**Directory:** `01_Initial_DALY_Mapping/`
 
-## Code-to-Output Relationships
+Establishes the initial mapping between nonprofit organizations and DALY disease categories.
 
-| Code | Output |
-|--------|---------|
-| Org_mission_to_DALY_v8.py | FINAL_DATASET_STAGE1.xlsx |
-| B_entity_extraction_mapping_v1.py | B_entity_extraction_mapping_v1.xlsx |
-| C_entity_extraction_mapping_v1.py | C_entity_extraction_mapping_v1.xlsx |
+The workflow includes direct disease matching, alias-based matching, classification into Groups A, B, and C, NLP analysis, entity extraction, semantic similarity, and manual review.
 
----
+This stage includes the initial datasets, Python scripts, intermediate outputs, and methodological documentation.
 
-## Dataset Groups
+### 02 — DALY–MeSH Dictionary
 
-### Group A – Direct DALY Mapping
+**Directory:** `02_MeSH_Dictionary/`
 
-Organizations that could be directly mapped to a specific disease or DALY category using organization names, mission statements, disease keywords, and alias matching.
+Investigates the use of Medical Subject Headings (MeSH) to expand and standardize the terminology associated with DALY disease categories.
 
-### Group B – Medical Organizations Without a Specific Disease Assignment
+The work includes disease terminology, synonyms, hierarchical relationships, and the examination of potential matches between organizational mission statements and medical concepts.
 
-Organizations with a clear medical focus but without an explicit disease reference. These organizations were further analyzed using NLP, clustering, entity extraction, semantic similarity, and manual review.
+### 03 — Organization Activity Classification
 
-### Group C – Organizations Without Sufficient DALY Mapping
+**Directory:** `03_Activity_Classification/`
 
-Organizations that could not be confidently mapped to a disease, medical specialty, or DALY category using the existing mapping framework. Additional entity extraction and semantic analysis were performed to identify potential medical relationships.
+Develops and evaluates a rule-based approach to classifying nonprofit healthcare organizations along two dimensions:
 
----
+- **Main Theme:** The primary area or focus of organizational activity.
+- **Organization Type:** The type or functional role of the organization.
+
+This stage includes classifier development, manually reviewed samples, and independent validation of classification performance.
+
+## Research Methodology
+
+The research combines several analytical approaches:
+
+- Structured matching between organizational information and disease categories.
+- Natural Language Processing (NLP) and entity extraction.
+- Medical terminology mapping using MeSH.
+- Rule-based organization classification.
+- Manual review and validation.
+- Quantitative analysis of philanthropic funding and disease burden.
+
+The methodology is developed iteratively, with attention to mapping coverage, classification uncertainty, and the limitations of assigning broad organizational activities to individual diseases.
+
+## Research Status
+
+This repository documents ongoing academic research.
+
+The datasets, scripts, classification methods, and intermediate results may be revised as the methodology develops.
+
+Results and classifications should therefore be interpreted as research-stage outputs rather than final conclusions.
 
 ## Documentation
 
-This repository also contains an interim research report summarizing:
+Each research-stage directory contains its own documentation describing the relevant methodology, files, and outputs.
 
-- Current findings
-- Classification methodology
-- Group A, B and C results
-- Entity extraction and semantic similarity experiments
-- Open methodological questions
-- Proposed next research steps
-
----
-
-## Research Objective
-
-The primary objective of this research is to examine the relationship between philanthropic funding and global disease burden by mapping nonprofit medical organizations to DALY disease categories and comparing funding distribution with DALY-based disease burden estimates.
-
-The project combines structured disease matching, NLP methods, semantic analysis, and manual review to improve disease attribution and identify opportunities for expanding DALY coverage across nonprofit medical organizations.
+The repository is organized to support transparency, reproducibility, and further methodological development.
